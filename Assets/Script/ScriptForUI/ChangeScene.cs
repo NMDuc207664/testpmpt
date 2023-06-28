@@ -14,7 +14,7 @@ public class ChangeScene : MonoBehaviour
 
     public void CoopGame()
     {
-
+        SceneManager.LoadScene("LobbyTutorial_Done");
     }
 
     public void SettingsChange()

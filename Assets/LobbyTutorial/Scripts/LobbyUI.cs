@@ -30,7 +30,6 @@ public class LobbyUI : MonoBehaviour {
 
         playGameButton.onClick.AddListener(() =>
         {
-
             SceneManager.LoadScene("Level 1_Network");
 
         });
