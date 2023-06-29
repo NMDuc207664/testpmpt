@@ -1,8 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 
 public class RobotMovement : MonoBehaviour
+=======
+using Unity.Netcode;
+public class RobotMovement : NetworkBehaviour
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
 {
     [Header("Components")]
     private Rigidbody2D rb;
@@ -55,6 +60,10 @@ public class RobotMovement : MonoBehaviour
 
     void Update()
     {
+<<<<<<< HEAD
+=======
+        if (!IsOwner) return;
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
         controlMovement();
         CharacterStuck();
     }
@@ -112,7 +121,11 @@ public class RobotMovement : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
+<<<<<<< HEAD
             AudioManager.Instance.PlaySfx("Jump");
+=======
+            //AudioManager.Instance.PlaySfx("Jump");
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
         }
 
         //makes you jump higher when you hold down jump button

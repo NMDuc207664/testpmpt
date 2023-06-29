@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+<<<<<<< HEAD
 
 public class RobotCarrying : MonoBehaviour
+=======
+using Unity.Netcode;
+
+public class RobotCarrying : NetworkBehaviour
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
 {
     [Header("Pick up magnet")]
     [SerializeField] private bool isTouchingMagnet = false;
@@ -15,6 +21,11 @@ public class RobotCarrying : MonoBehaviour
     [SerializeField] private BoxCollider2D robotCollider;
     [SerializeField] private BoxCollider2D checkCollider;
     [SerializeField] private Rigidbody2D Magnet;
+<<<<<<< HEAD
+=======
+    [SerializeField] private TrajectoryLine Joint2D;
+    [SerializeField] private ActivatePlatform platformMove;
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
 
     // Player can not collide with the magnet
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,6 +37,18 @@ public class RobotCarrying : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
+=======
+    private void Awake()
+    {
+        Magnet = GameObject.FindGameObjectWithTag("Magnet").GetComponent<Rigidbody2D>();
+        Joint2D = GameObject.FindGameObjectWithTag("Magnet").GetComponent<TrajectoryLine>();
+        Joint2D.magnetJoin = GetComponent<FixedJoint2D>();
+        platformMove = GameObject.FindGameObjectWithTag("Platform").GetComponent<ActivatePlatform>();
+        platformMove.movementControl = GetComponent<RobotMovement>();
+    }
+
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
     private void Update()
     {
         // Ray cast to check if the player is near the magnet
@@ -46,12 +69,20 @@ public class RobotCarrying : MonoBehaviour
             {
                 GetComponent<FixedJoint2D>().enabled = true;
                 GetComponent<FixedJoint2D>().connectedBody = Magnet;
+<<<<<<< HEAD
+=======
+                Magnet.GetComponent<TrajectoryLine>().enabled = true;
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
                 Magnet.gravityScale = 1.5f;
                 Magnet.mass = 1;
              }
 
             if (isCarryingMagnet)
             {
+<<<<<<< HEAD
+=======
+                Magnet.GetComponent<TrajectoryLine>().enabled = false;
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
                 GetComponent<FixedJoint2D>().enabled = false;
                 Magnet.gravityScale = 3;
                 Magnet.mass = 3;
@@ -61,6 +92,11 @@ public class RobotCarrying : MonoBehaviour
         CheckCarryingMagnet();
     }
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
     // Show the pick up range on unity
     private void OnDrawGizmosSelected()
     {

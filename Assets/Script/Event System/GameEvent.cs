@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 
 [CreateAssetMenu(menuName = "Game Event")]
 public class GameEvent : ScriptableObject
 {
     public List<GameEventListener> listenerList = new List<GameEventListener>();
 
+=======
+using Unity.Netcode;
+
+[CreateAssetMenu(menuName = "Game Event")]
+public class GameEvent : ScriptableObject, INetworkSerializeByMemcpy
+{
+    public List<GameEventListener> listenerList = new List<GameEventListener>();
+
+
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
     // Call event though different methods signatures
     public void Call()
     {

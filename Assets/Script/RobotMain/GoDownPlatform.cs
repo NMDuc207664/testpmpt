@@ -9,6 +9,15 @@ public class GoDownPlatform : MonoBehaviour
     [SerializeField] private BoxCollider2D groundcheckCollision;
     [SerializeField] private FixedJoint2D carryMagnet;
 
+<<<<<<< HEAD
+=======
+
+    private void Awake()
+    {
+        carryMagnet = GetComponent<FixedJoint2D>();
+    }
+
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
     // Update is called once per frame
     void Update()
     {

@@ -1,23 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 
 public class ActivatePlatform : MonoBehaviour
+=======
+using Unity.Netcode;
+public class ActivatePlatform : NetworkBehaviour
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
 {
     [Header("Moving property")]
     [SerializeField] private Transform positionA;
     [SerializeField] private Transform positionB;
     [SerializeField] private float moveSpeed;
     [SerializeField] private bool isatpointA = false;
+<<<<<<< HEAD
     Vector3 targetPos; 
 
     private RobotMovement movementControl;
+=======
+    Vector3 targetPos;
+
+    [HideInInspector] public RobotMovement movementControl;
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
     private Rigidbody2D rbPlatform;
     private Vector3 moveDirection;
 
     private void Awake()
+<<<<<<< HEAD
     {
         movementControl = GameObject.FindGameObjectWithTag("Player").GetComponent<RobotMovement>();
+=======
+    {  
+        //movementControl = GameObject.FindGameObjectWithTag("Player").GetComponent<RobotMovement>();
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
         rbPlatform = GetComponent<Rigidbody2D>();
     }
 
@@ -36,6 +52,10 @@ public class ActivatePlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
+        if (!GameObject.FindGameObjectWithTag("Player")) return;
+>>>>>>> 6c8fc666f88b704478b391626bbc739275b3b3af
         // If platfrom is moving toward A point, check mark that it's in A
         if ((Vector2.Distance(transform.position, positionA.position) < 0.1f) && !isatpointA)
         {
